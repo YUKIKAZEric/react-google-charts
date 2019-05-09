@@ -39,7 +39,7 @@ export class GoogleChartLoader extends React.Component<Props> {
     const { onError } = this.props;
     return (
       <Script
-        url="https://www.gstatic.com/charts/loader.js"
+        url="%PUBLIC_URL%/gstatic/loader.js"
         onError={onError}
         onLoad={() => {
           const windowWithGoogle = window as Window & {

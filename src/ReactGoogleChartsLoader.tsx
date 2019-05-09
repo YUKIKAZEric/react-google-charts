@@ -8,14 +8,14 @@ export type ReactGoogleChartsLoaderProps = {
 };
 export class ReactGoogleChartsLoader extends React.Component<
   ReactGoogleChartsLoaderProps
-> {
+  > {
   loadScript: boolean;
   constructor(props: ReactGoogleChartsLoaderProps) {
     super(props);
     const documentScripts = document.getElementsByTagName("script");
     this.loadScript = true;
     for (let i = 0; i < documentScripts.length; i += 1) {
-      if (documentScripts[i].src.includes("gstatic.com/charts/loader.js")) {
+      if (documentScripts[i].src.includes("%PUBLIC_URL%/gstatic/loader.js")) {
         this.loadScript = false;
       }
     }
@@ -30,7 +30,7 @@ export class ReactGoogleChartsLoader extends React.Component<
     if (this.loadScript === true) {
       return (
         <Script
-          url="https://www.gstatic.com/charts/loader.js"
+          url="%PUBLIC_URL%/gstatic/loader.js"
           onError={() => {
             onError();
           }}
