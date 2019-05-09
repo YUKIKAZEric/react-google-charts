@@ -8,7 +8,7 @@ export type ReactGoogleChartsLoaderProps = {
 };
 export class ReactGoogleChartsLoader extends React.Component<
   ReactGoogleChartsLoaderProps
-  > {
+> {
   loadScript: boolean;
   constructor(props: ReactGoogleChartsLoaderProps) {
     super(props);
